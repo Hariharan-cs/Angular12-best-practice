@@ -1,0 +1,37 @@
+<!-- <div class="btn-group btn-group-toggle">
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton (click)="backClick()"> back
+  </label>
+</div>
+<div>
+  <p>
+    Name: {{ (user$ | async )?.name }}
+  </p>
+  <p>
+    Card Number: {{ (user$ | async )?.cardNumber }}
+  </p>
+  <p>
+    Card Type: {{ (user$ | async )?.cardType }}
+  </p>
+</div> -->
+ 
+<mat-card class="mat-card">
+  <mat-card-title>Name: {{ (user$ | async )?.name }} </mat-card-title>
+  <mat-card-content>Card Number: {{ (user$ | async )?.cardNumber }}</mat-card-content>
+  <mat-card-content>Card Type: {{ (user$ | async )?.cardType }}</mat-card-content> 
+  <mat-card-actions> <button mat-button (click)="backClick()">Back</button> </mat-card-actions>
+</mat-card>
+
+<!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+<mat-card class="example-card">
+  <mat-card-title>Shiba Inu</mat-card-title>
+  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  <mat-card-content>
+    <p>This card indeterminates progress bar.</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
