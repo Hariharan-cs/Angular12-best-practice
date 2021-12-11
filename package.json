@@ -1,5 +1,5 @@
 {
-  "name": "redux-lazyloading-authguard",
+  "name": "redux-lazyloading-authguard-msal-login-jwt-login",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
