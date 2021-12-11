@@ -1,0 +1,12 @@
+<nav class="toc py-3 nav-margin" >
+    <div class="toc-item mb-2" [class.active]="isActive(['/admin/menus/dashboard'])">
+        <a class="toc-link" routerLink="/admin/menus/dashboard">Dashboard</a>
+    </div>
+    <div class="toc-item mb-2" [class.active]="isActive(['/admin/menus/reset-password'])">
+        <a class="toc-link" routerLink="/admin/menus/reset-password">Reset Password</a> 
+    </div>
+    <div class="toc-item mb-2" [class.active]="isActive(['/admin/menus/users'])">
+        <a class="toc-link" routerLink="/admin/menus/users">Users</a> 
+    </div>
+</nav>
+<router-outlet></router-outlet>
