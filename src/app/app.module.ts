@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserService } from './services/user/user.service';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -20,19 +17,15 @@ import { ConfigEffects } from './store/effects/config.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PreloadAllModules } from '@angular/router';
+import { LoginModule } from './modules/login/login.module';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    ForgotPasswordComponent,
-    NotFoundComponent,
-  ],
+  declarations: [AppComponent, ForgotPasswordComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
@@ -41,9 +34,9 @@ import { PreloadAllModules } from '@angular/router';
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     BrowserAnimationsModule,
-
+    LoginModule,
   ],
-  providers: [UserService],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,7 +5,6 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { AuthGuard } from '../../../app/guards/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -18,7 +17,6 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       {
         path: 'menus',
-        canActivate: [AuthGuard],
         loadChildren: () =>
           import('../admin/components/menus/menus.module').then(
             (m) => m.MenusModule

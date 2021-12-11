@@ -1,6 +1,6 @@
-import { AuthService } from './../../../../services/auth/auth.service';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { JwtAuthService } from 'src/app/services/auth/jwt-auth/jwt-auth.service';
+import { MsalAuthService } from 'src/app/services/auth/msal-auth/msal-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  constructor(
+    private jwtAuth: JwtAuthService,
+    private msalAuth: MsalAuthService
+  ) {}
 
   ngOnInit(): void {}
   logout(): void {
-    this.auth.logout();
+    let loginType = 'microsoft'; // 'google' // 'jwt'
+
+    if (loginType === 'jwt') {
+      this.jwtAuth.logout();
+    } else if (loginType === 'microsoft') {
+      this.msalAuth.logout();
+    }
   }
 }
