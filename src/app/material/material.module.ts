@@ -45,6 +45,16 @@ import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 
+//PRIME NG
+
+
+import { ButtonModule } from 'primeng/button';
+import { CardModule, } from 'primeng/card';
+import { PanelModule } from "primeng/panel";
+import { RippleModule } from "primeng/ripple";
+import {InputTextModule} from 'primeng/inputtext'; 
+import {SidebarModule} from 'primeng/sidebar';
+
 @NgModule({
   exports: [
     A11yModule,
@@ -92,6 +102,14 @@ import { CommonModule } from '@angular/common';
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    // PRIME NG
+
+    CardModule,
+    ButtonModule,
+    PanelModule,
+    RippleModule,
+    InputTextModule,
+    SidebarModule
   ],
   declarations: [],
   imports: [CommonModule],

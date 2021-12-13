@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.component';
 import { JwtLoginComponent } from './jwt-login/jwt-login.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginRoutingModule } from './login-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,20 +18,21 @@ const isIE =
 import { UserService } from 'src/app/services/user/user.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // Import
 import { AuthGuard } from 'src/app/guard/auth.guard';
+import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   declarations: [MicrosoftLoginComponent, JwtLoginComponent, LoginComponent],
   imports: [
     CommonModule,
-    NgbModule,
+    // NgbModule,
     LoginRoutingModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     HttpClientModule,
     MsalModule.forRoot(
       new PublicClientApplication({
         auth: {
-          clientId: 'client_id', // This is your client ID
+          clientId: '20e32ff0-2c3e-496c-86a3-3ea4fea80980', // This is your client ID
           // authority: 'Enter_the_Cloud_Instance_Id_Here'/'Enter_the_Tenant_Info_Here', // This is your tenant ID
           redirectUri: 'http://localhost:4200', // This is your redirect URI
         },
@@ -56,6 +57,7 @@ import { AuthGuard } from 'src/app/guard/auth.guard';
         ]),
       }
     ),
+    MaterialModule
   ],
   providers: [
     UserService,

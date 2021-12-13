@@ -1,0 +1,30 @@
+.login-grid-body {
+  margin: 0px !important;
+
+  .login-textbox {
+    margin: 15px 0px 25px !important;
+  }
+
+  .login-button-color {
+    background: #4880ff;
+  }
+
+  .login-button-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 11px 0px;
+  }
+  
+  .login-button {
+    margin: 0px !important;
+    padding: 0px 0px 5px;
+  }
+}

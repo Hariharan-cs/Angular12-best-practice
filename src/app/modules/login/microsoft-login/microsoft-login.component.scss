@@ -1,9 +1,22 @@
-// .microsoft-btn {
-//     // margin-top: 15px;
-// }
-.x-icon {
-    height: 1em;
-    width: 1em;
-    top: .125em;
-    position: relative;
+.login-button-grid-body {
+  margin: 0px !important;
+  padding: 10px 0px 25px;
+
+  .login-button-color {
+    background: #4880ff;
+  }
+
+  .login-button-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 11px 0px;
+  }
 }

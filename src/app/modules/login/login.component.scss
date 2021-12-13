@@ -1,4 +1,102 @@
-.or-span {
-    margin:10px;
-    text-align: center;
+.login-background-image {
+  background: url("../../../assets/images/default_background_image.svg")
+    no-repeat center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover !important;
+  height: 100vh !important;
+}
+
+.login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 480px;
+  min-height: 213px;
+}
+
+.login-grid-body {
+  padding: 48px 32px 25px;
+}
+
+.login-card-header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  /* identical to box height, or 117% */
+  margin-bottom: 10px;
+  letter-spacing: -0.06px;
+  color: #263238;
+}
+
+.login-card-content {
+}
+
+.login-line-grid-body {
+  padding: 3px 32px;
+  hr {
+    border: 0.1px solid #eeeeee;
+  }
+}
+
+.login-icon {
+  margin: -40px 20px;
+}
+
+.login-button-container {
+  padding: 0px 32px;
+}
+
+.box {
+  background-color: var(--surface-e);
+  border-radius: 4px;
+}
+
+.box-stretched {
+  height: 100%;
+}
+
+.vertical-container {
+  margin: 0;
+  height: 200px;
+  background: var(--surface-d);
+  // border-radius: 4px;
+}
+
+.nested-grid .p-col-4 {
+  padding-bottom: 1rem;
+}
+
+.login-grid-signup {
+  padding: 10px 32px 20px;
+
+  .login-signup-text {
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #607D8B;
+  }
+
+  .login-signup-text-button {
+    margin-left: 5px;
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    text-decoration-line: underline;
+    cursor: pointer;
+    color: #1e88e5;
+  }
 }

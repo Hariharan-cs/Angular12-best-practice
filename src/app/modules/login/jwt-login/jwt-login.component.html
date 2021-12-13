@@ -1,10 +1,15 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div class="form-group">
-        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" name="email" />
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="login-grid-body">
+    <div class="form-group box p-grid login-textbox">
+        <input type="text" id="email" pInputText class="p-inputtext-lg p-col" placeholder="Email Address"
+            formControlName="email" name="email">
     </div>
-    <div class="form-group">
-        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password"
-            name="password" />
+    <div class="form-group box p-grid login-textbox">
+        <input type="password" id="password" pInputText class="p-inputtext-lg p-col" placeholder="Password"
+            formControlName="password" name="password">
     </div>
-    <input type="submit" class="btn btn-primary w-100" value="Login" name="">
+
+    <div class="box p-grid login-button">
+        <button pButton type="submit" label="SIGN IN"
+            class="p-button p-col login-button-text login-button-color"></button>
+    </div>
 </form>
