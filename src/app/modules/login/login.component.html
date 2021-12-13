@@ -1,4 +1,4 @@
-<div class="container vh-100" *ngIf="disabled">
+<!-- <div class="container vh-100">
     <div class="row justify-content-center h-100">
         <div class="card my-auto shadow">
           <div class="card-body px-5">
@@ -19,8 +19,58 @@
         <div class="card-footer text-right">
             <small><a routerLink="../forgot-password">Forgot Password</a></small>
         </div>
-    </div>
-</div>
-<div *ngIf="!disabled">
+    </div> login-card
+</div> -->
 
+<div class="p-grid vertical-container login-background-image" *ngIf="loginType === 'jwt'">
+    <div class="p-col p-as-start"></div>
+    <div class="p-col p-as-center login-icon">
+        <div class="p-grid">
+            <div class="p-col login-icon">
+                <img src="../../../assets/icons/lock_Icon.svg">
+            </div>
+        </div>
+        <div class="box p-grid">
+            <div class="p-col-12 login-grid-body">
+                <div class="login-card-header">Sign In to oneDPO</div>
+            </div>
+            <div class="p-col-12 login-line-grid-body">
+                <hr>
+            </div>
+            <div class="p-col-12 login-button-container">
+                <app-jwt-login></app-jwt-login>
+            </div>
+            <div class="p-col-12 login-line-grid-body">
+                <hr>
+            </div>
+            <div class="p-col-12 login-grid-signup">
+                <div class="login-signup-text">Don’t have an account?</div>
+                <div class="login-signup-text-button">Sign Up</div>
+            </div>
+        </div>
+    </div>
+    <div class="p-col p-as-end"></div>
+</div>
+
+<div class="p-grid vertical-container login-background-image" *ngIf="loginType === 'microsoft'">
+    <div class="p-col p-as-start"></div>
+    <div class="p-col p-as-center">
+        <div class="p-grid">
+            <div class="p-col login-icon">
+                <img src="../../../assets/icons/lock_Icon.svg">
+            </div>
+        </div>
+        <div class="box p-grid">
+            <div class="p-col-12 login-grid-body">
+                <div class="login-card-header">Login with Microsoft</div>
+            </div>
+            <div class="p-col-12 login-line-grid-body">
+                <hr>
+            </div>
+            <div class="p-col-12 login-button-container">
+                <app-microsoft-login></app-microsoft-login>
+            </div>
+        </div>
+    </div>
+    <div class="p-col p-as-end"></div>
 </div>

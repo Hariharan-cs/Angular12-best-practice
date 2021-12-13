@@ -1,0 +1,40 @@
+.sidenav_container {
+  min-width: 60px;
+  height: auto;
+  overflow: auto;
+}
+
+.left_arrow_button {
+  line-height: 0px;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  float: right;
+  background: #EDEEF1;
+
+  .left_arrow_icon {
+    float: right;
+    left: 45px;
+    position: fixed;
+    right: 0px;
+  }
+}
+
+.right_arrow_button {
+  line-height: 0px;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  left: 50px;
+  float: right;
+  position: fixed;
+  background: #313541;
+
+  .right_arrow_icon {
+    float: right;
+    left: 45px;
+    position: fixed;
+    right: 0px;
+  }
+}
+

@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
   logout(): void {
-    let loginType = 'microsoft'; // 'google' // 'jwt'
+    let loginType: String = 'microsoft'; // 'google', 'jwt'
 
     if (loginType === 'jwt') {
       this.jwtAuth.logout();

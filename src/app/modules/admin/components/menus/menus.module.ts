@@ -6,7 +6,7 @@ import { MenusComponent } from './menus.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { MaterialModule } from 'src/app/material/material.module';
@@ -22,7 +22,7 @@ import { MaterialModule } from 'src/app/material/material.module';
   imports: [
     CommonModule,
     MenusRoutingModule,
-    NgbModule,
+    // NgbModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     MaterialModule,
