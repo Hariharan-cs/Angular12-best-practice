@@ -1,68 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { animateText, onSideNavChange } from 'src/app/animations/sidenav.animation';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { JwtAuthService } from 'src/app/services/auth/jwt-auth/jwt-auth.service';
 import { MsalAuthService } from 'src/app/services/auth/msal-auth/msal-auth.service';
-import { SidenavService } from 'src/app/services/commons/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-nav-menu-bar',
   templateUrl: './nav-menu-bar.component.html',
   styleUrls: ['./nav-menu-bar.component.scss'],
-  animations: [onSideNavChange, animateText]
-
 })
 export class NavMenuBarComponent implements OnInit {
+  
+  @Input() isExpanded: boolean;
+  @Output() toggleMenu = new EventEmitter();
 
-  public sideNavState: boolean = false;
-  public linkText: boolean = false;
+  constructor(private jwtAuth: JwtAuthService, private msalAuth: MsalAuthService) {}
 
-  public pages = [
-    {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    {name: 'Starred', link:'some-link', icon: 'star'},
-    {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Logout', link:'logout', icon: 'logout'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-    // {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    // {name: 'Starred', link:'some-link', icon: 'star'},
-    // {name: 'Send email', link:'some-link', icon: 'send'},
-  ]
-
-  constructor(private _sidenavService: SidenavService, 
-    private jwtAuth: JwtAuthService,
-    private msalAuth: MsalAuthService,
-    ) { }
-
-  ngOnInit() {
-  }
-
-  onSinenavToggle() {
-    this.sideNavState = !this.sideNavState
-    
-    setTimeout(() => {
-      this.linkText = this.sideNavState;
-    }, 200)
-    this._sidenavService.sideNavState$.next(this.sideNavState)
-  }
+  ngOnInit() {}
 
   logout(): void {
     let loginType: String = 'microsoft'; // 'google', 'jwt'
@@ -73,4 +25,20 @@ export class NavMenuBarComponent implements OnInit {
     }
   }
 
+  public mainMenus = [
+    { link: 'about', name: 'Dashboard', icon: '../../../../../assets/icons/right_arrow' },
+    { link: 'locations', name: 'Breach Assessment', icon: '../../../../../assets/icons/right_arrow' },
+    { link: 'locations', name: 'Privacy Assessment', icon: '../../../../../assets/icons/right_arrow' },
+    { link: 'locations', name: 'Actions', icon: '../../../../../assets/icons/right_arrow' },
+    { link: 'locations', name: 'Reports', icon: 'reports' },
+    { link: 'locations', name: 'Status', icon: 'status' },
+    { link: 'locations', name: 'Notifications', icon: 'notification' },
+  ];
+  public bottomMenus = [
+    { link: 'about', name: 'Customize', icon: 'customize' },
+    { link: 'about', name: 'Settings', icon: 'settings' },
+  ]
+  public logoutMenu = [
+    { link: 'about', name: 'Logout', icon: 'logout' },
+  ]
 }

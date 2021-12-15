@@ -67,7 +67,7 @@ import { MaterialModule } from 'src/app/material/material.module';
       multi: true,
     },
     MsalGuard,
-    AuthGuard,
+    // AuthGuard,
   ],
 })
 export class LoginModule {}

@@ -1,40 +1,162 @@
-.sidenav_container {
-  min-width: 60px;
-  height: auto;
-  overflow: auto;
+// .sidenav_container {
+//   min-width: 60px;
+//   height: auto;
+//   overflow: auto;
+// }
+
+// .left_arrow_button {
+//   line-height: 0px;
+//   width: 22px;
+//   height: 22px;
+//   border-radius: 5px;
+//   float: right;
+//   background: #EDEEF1;
+
+//   .left_arrow_icon {
+//     float: right;
+//     left: 45px;
+//     position: fixed;
+//     right: 0px;
+//   }
+// }
+
+// .right_arrow_button {
+//   line-height: 0px;
+//   width: 22px;
+//   height: 22px;
+//   border-radius: 5px;
+//   left: 50px;
+//   float: right;
+//   position: fixed;
+//   background: #313541;
+
+//   .right_arrow_icon {
+//     float: right;
+//     left: 45px;
+//     position: fixed;
+//     right: 0px;
+//   }
+// }
+
+// don't forget to add the global styles that are in styles.css
+
+.sidenav {
+  width: 250px;
 }
 
-.left_arrow_button {
-  line-height: 0px;
+.toggle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // justify-content: space-around;
+  padding: 16px 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  .active-link {
+    background-color: #fafafa;
+    border-left: solid 3px #1976d2;
+  }
+
+  .hover {
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: transform, border, background-color;
+  }
+
+  mat-list-item,
+  a {
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      background-color: #fafafa;
+      border-left: solid 3px #1976d2;
+    }
+  }
+  mat-icon {
+    color: #1976d2;
+  }
+}
+
+// .logout-nav-button {
+//   position: absolute !important;
+//   bottom: 0 !important;
+// }
+
+.mini-nav-size {
+  min-width:81px;
+  background: #fbfcfc;
+  overflow: hidden;
+}
+
+.onedpo-logo-text {
+  color: #313541;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 16px;
+  /* identical to box height, or 171% */
+  text-align: center;
+  letter-spacing: 0.5px;
+ 
+}
+
+.onedpo-logo-icon {
+  margin-right: 5px;
+}
+
+.onedpo-logo-text-icon {
+  margin-right: 25px;
+}
+
+
+.left-arrow-button {
+  border-radius: 5px;
   width: 22px;
   height: 22px;
-  border-radius: 5px;
-  float: right;
-  background: #EDEEF1;
+  background: #edeef1;
+  line-height: 0px;
+  margin: 10px 0px 10px 25px;
 
-  .left_arrow_icon {
+  span {
+    padding: 0px ;
+    line-height: 0px ;
+  }
+
+  .left-arrow-icon {
     float: right;
     left: 45px;
     position: fixed;
     right: 0px;
+    padding: 10px 35px;
   }
 }
 
-.right_arrow_button {
-  line-height: 0px;
+.right-arrow-button {
+  border-radius: 5px;
   width: 22px;
   height: 22px;
-  border-radius: 5px;
-  left: 50px;
-  float: right;
-  position: fixed;
   background: #313541;
+  line-height: 0px;
+  margin: 10px 0px 10px 25px;
 
-  .right_arrow_icon {
-    float: right;
-    left: 45px;
-    position: fixed;
-    right: 0px;
-  }
+  position: fixed;
+  left: 45px;
+
+  // .right-arrow-icon {
+  //   float: right;
+  //   left: 45px;
+  //   position: fixed;
+  //   right: 0px;
+  //   padding: 10px 35px;
+  // }
 }
+
 

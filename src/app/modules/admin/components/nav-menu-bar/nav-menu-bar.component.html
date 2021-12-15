@@ -1,45 +1,67 @@
-<div class="sidenav_container" [@onSideNavChange]="sideNavState ? 'open' : 'close'">
-    <div fxLayout="column" fxLayoutGap="10px" style="height: 100vh;">
+<section [class.sidenav]="isExpanded" class="mini-nav-size">
+  <div class="toggle">
+    <img class="onedpo-logo-icon" src="../../../../../assets/icons/onedpo_logo.svg" *ngIf="isExpanded"/>
+    <!-- <h1> oneDPO </h1> -->
+    <img class="onedpo-logo-text-icon" src="../../../../../assets/icons/onedpo_name_icon.svg" *ngIf="isExpanded"/>
+      <!-- *ngIf="isExpanded"/> -->
+    <img src="../../../../../assets/icons/onedpo_logo_blue_icon.svg" *ngIf="!isExpanded"/>
+    <button *ngIf="isExpanded" class="left-arrow-button " mat-icon-button
+      aria-label="Example icon button with a menu icon" (click)="toggleMenu.emit(null)">
+      <img src="../../../../../assets/icons/left_arrow_icon.svg"/>
+    </button>
+    <button *ngIf="!isExpanded" class="right-arrow-button " mat-icon-button
+      aria-label="Example icon button with a menu icon" (click)="toggleMenu.emit(null)">
+      <img src="../../../../../assets/icons/right_arrow.svg"/>
+    </button>
 
-        <div fxLayout="row" fxLayoutAlign="end center" style="padding: 0px 10px;">
-            <!-- <button mat-icon-button (click)="onSinenavToggle()">
-              <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
-              <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
-            </button> -->
 
-            <button mat-icon-button (click)="onSinenavToggle()" class="right_arrow_button right_icon" *ngIf="!sideNavState">
-                <object data="../../../../../assets/icons/right_arrow.svg"></object>
-            </button>
-            <button mat-icon-button (click)="onSinenavToggle()" class="left_arrow_button left_icon" *ngIf="sideNavState">
-                <object data="../../../../../assets/icons/left_arrow.svg"></object>
-            </button>
- 
-        </div>
 
-        <!-- <div class="user_menu">
-        <mat-nav-list>
-          <a mat-list-item>
-            <img class="jim" src="https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2018/06/21/931/524/694940094001_5800293009001_5800284148001-vs.jpg?ve=1&tl=1" alt="">
-            <span [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
-          </a>
-        </mat-nav-list>
-        <mat-divider></mat-divider>
-      </div> -->
+    <!-- <span class="onedpo-logo-text">oneDPO</span> -->
+    <!-- <mat-icon (click)="toggleMenu.emit(null)">
+      {{ isExpanded ? "keyboard_backspace" : "dehaze" }}
+    </mat-icon> -->
+  </div>
 
-        <div>
-            <mat-nav-list>
-                <a mat-list-item *ngFor="let page of pages">
-                    <mat-icon style="padding-right:5px;">{{page?.icon}}</mat-icon>
-                    <span [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
-                </a>
-                <a mat-list-item (click)="logout()">
-                <mat-icon style="padding-right:5px;" >logout</mat-icon>
-                <span [@animateText]="linkText ? 'show' : 'hide'">Logout</span>
-            </a>
-            </mat-nav-list>
-        </div>
-    </div>
 
-    <!-- <span class="spacer"></span> -->
+  <mat-list class="nav">
+    <a mat-list-item routerLinkActive="active-link" class="hover" routerLink="about">
+      <button class="" mat-icon-button>
+        <img src="../../../../../assets/icons/dashboard_icon.svg"/>
+      </button>
+      <p matLine *ngIf="isExpanded" style="float:right">Dashboard</p>
+    </a>
+  </mat-list>
 
-</div>
+
+
+
+
+
+
+<!-- 
+  <mat-list class="nav" *ngFor="let item of mainMenus">
+    <a mat-list-item routerLinkActive="active-link" class="hover" routerLink="{{ item.link }}">
+      <button class="" mat-icon-button aria-label="" (click)="toggleMenu.emit(null)">
+        <img src="{{item.icon}}"/>
+      </button>
+      <p matLine *ngIf="isExpanded">{{ item.name }}</p>
+      <mat-icon mat-list-icon [matTooltip]="!isExpanded ? item.name : null" matTooltipPosition="right">{{ item.icon }}</mat-icon>
+      <p matLine *ngIf="isExpanded">{{ item.name }}</p>
+    </a>
+  </mat-list>
+  <mat-list class="nav" *ngFor="let item of bottomMenus">
+    <a mat-list-item routerLinkActive="active-link" class="hover" routerLink="{{ item.link }}">
+      <mat-icon mat-list-icon [matTooltip]="!isExpanded ? item.name : null" matTooltipPosition="right">
+        {{ item.icon }}</mat-icon>
+      <p matLine *ngIf="isExpanded">{{ item.name }}</p>
+    </a>
+  </mat-list> -->
+  <mat-list class="nav logout-nav-button" *ngFor="let item of logoutMenu">
+    <a mat-list-item routerLinkActive="active-link" class="hover" routerLink="{{ item.link }}">
+      <mat-icon mat-list-icon [matTooltip]="!isExpanded ? item.name : null" matTooltipPosition="right" (click)="logout()">
+        {{ item.icon }}</mat-icon>
+      <p matLine *ngIf="isExpanded">{{ item.name }}</p>
+    </a>
+  </mat-list>
+
+</section>
